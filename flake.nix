@@ -25,11 +25,15 @@
       inherit pkgs;
       package = pumpkin.packages.${system}.default;
       settings = {
-        networking.java.enabled = true;
-        networking.java.online_mode = false;
-        networking.java.encryption = false;
-        networking.java.address = "0.0.0.0:25565";
-        networking.bedrock.enabled = false;
+        networking = {
+          java = {
+            enabled = true;
+            online_mode = false;
+            encryption = false;
+            address = "0.0.0.0:25565";
+          };
+          bedrock.enabled = false;
+        };
       };
       plugins = [
         {
